@@ -859,7 +859,7 @@ footer {
     .nav-links {
         position: fixed;
         top: 70px;
-        right: -90px;
+        right: -50px;
         width: min(45vw, 220px);
         height: auto;
         display: flex;
