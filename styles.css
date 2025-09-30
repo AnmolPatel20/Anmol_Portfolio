@@ -381,25 +381,30 @@ nav {
     opacity: 0;
     transform: translateY(20px);
     animation: fadeInUp 1s ease 0.6s forwards;
+    justify-content: center;
+    flex-wrap: nowrap;
 }
 
 .social-links a {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 56px; /* bigger button */
+    width: 56px;
     height: 56px;
+    min-width: 56px;
+    min-height: 56px;
+    max-width: 56px;
+    max-height: 56px;
     background-color: var(--bg-secondary);
     border-radius: 50%;
-    font-size: 1.4rem; /* bigger icon */
+    font-size: 1.4rem;
     color: var(--accent-color);
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
     border: none;
-    flex-shrink: 0; /* prevent shrinking */
-    aspect-ratio: 1 / 1; /* ensure perfect circle */
+    flex-shrink: 0;
 }
 
 .social-links a::before {
@@ -837,13 +842,18 @@ footer {
     }
     .hero-content h1 {
         font-size: 2.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        white-space: nowrap;
     }
     .hero-content h2 {
-        font-size: 1.4rem;
+        font-size: 1.6rem;
+        font-weight: 600;
+        line-height: 1.2;
     }
     .profile-image {
-        width: 200px;
-        height: auto;
+        width: 250px;
+        height: 250px;
         aspect-ratio: 1 / 1;
     }
     .nav-links {
@@ -896,23 +906,27 @@ footer {
     }
     
     .profile-image {
-        width: 200px;
-        height: 200px;
+        width: 220px;
+        height: 220px;
     }
     
     .hero-content h1 {
-        font-size: 1.5rem;
+        font-size: 1.6rem;
         line-height: 1.1;
+        font-weight: 700;
+        white-space: nowrap;
     }
     
     .hero-content h2 {
-        font-size: 1.1rem;
+        font-size: 1.3rem;
         line-height: 1.2;
+        font-weight: 600;
     }
     
     .hero-content p {
-        font-size: 1.1rem;
-        line-height: 1.4;
+        font-size: 1.5rem;
+        line-height: 1.6;
+        font-weight: 600;
     }
     
     .social-links {
@@ -944,24 +958,31 @@ footer {
         padding: 0 15px;
     }
     .hero-content h1 { 
-        font-size: 1.3rem; 
+        font-size: 1.4rem; 
         line-height: 1.1;
+        font-weight: 700;
+        white-space: nowrap;
     }
     .hero-content h2 { 
-        font-size: 1rem; 
+        font-size: 1.2rem; 
         line-height: 1.2;
+        font-weight: 600;
     }
     .hero-content p {
-        font-size: 1rem;
-        line-height: 1.4;
+        font-size: 1.4rem;
+        line-height: 1.6;
+        font-weight: 600;
     }
-    .profile-image { width: 180px; height: 180px; }
+    .profile-image { width: 200px; height: 200px; }
     .social-links a { 
         width: 44px; 
-        height: 44px; 
+        height: 44px;
+        min-width: 44px;
+        min-height: 44px;
+        max-width: 44px;
+        max-height: 44px;
         font-size: 1.1rem; 
         flex-shrink: 0;
-        aspect-ratio: 1 / 1;
     }
 }
 
@@ -975,24 +996,31 @@ footer {
         padding: 0 10px;
     }
     .hero-content h1 { 
-        font-size: 1.2rem; 
+        font-size: 1.3rem; 
         line-height: 1.1;
+        font-weight: 700;
+        white-space: nowrap;
     }
     .hero-content h2 { 
-        font-size: 0.9rem; 
+        font-size: 1.1rem; 
         line-height: 1.2;
+        font-weight: 600;
     }
     .hero-content p {
-        font-size: 0.95rem;
-        line-height: 1.4;
+        font-size: 1.3rem;
+        line-height: 1.6;
+        font-weight: 600;
     }
-    .profile-image { width: 160px; height: 160px; }
+    .profile-image { width: 180px; height: 180px; }
     .social-links a { 
         width: 40px; 
-        height: 40px; 
+        height: 40px;
+        min-width: 40px;
+        min-height: 40px;
+        max-width: 40px;
+        max-height: 40px;
         font-size: 1rem; 
         flex-shrink: 0;
-        aspect-ratio: 1 / 1;
     }
     .social-links { gap: 10px; }
 }
