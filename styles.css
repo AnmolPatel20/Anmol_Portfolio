@@ -476,7 +476,7 @@ nav {
     gap: 16px;
     align-items: stretch; /* ensure children stretch to equal heights */
     grid-auto-rows: 1fr;  /* equalize heights within each row */
-    grid-template-columns: 1fr 1fr; /* default: 2 columns (mobile) */
+    grid-template-columns: 1fr; /* default: single column on mobile */
     justify-content: center; /* center grid within container */
 }
 
@@ -822,8 +822,10 @@ footer {
     }
     /* Ensure content sits below fixed navbar on mobile */
     .hero {
-        padding-top: 180px;
-        padding-bottom: 160px; /* extra room so icons are fully visible */
+        min-height: 100vh; /* avoid overflow from fixed address bars */
+        height: auto;
+        padding-top: 140px; /* reduce extra top space */
+        padding-bottom: 120px; /* ensure social icons visible */
     }
     .hero-content {
         max-width: 700px;
@@ -837,7 +839,7 @@ footer {
         font-size: 1.4rem;
     }
     .profile-image {
-        width: 220px;
+        width: 200px;
         height: auto;
         aspect-ratio: 1 / 1;
     }
@@ -890,8 +892,8 @@ footer {
     }
     
     .profile-image {
-        width: 220px;
-        height: 220px;
+        width: 200px;
+        height: 200px;
     }
     
     .hero-content h1 {
@@ -905,7 +907,12 @@ footer {
     
     .social-links {
         justify-content: center;
-        gap: 14px;
+        gap: 12px;
+    }
+    .social-links a {
+        width: 48px;
+        height: 48px;
+        font-size: 1.2rem;
     }
     
     .contact-content {
@@ -915,6 +922,14 @@ footer {
     section {
         padding: 60px 0;
     }
+}
+
+/* Very small phones */
+@media (max-width: 420px) {
+    .hero-content h1 { font-size: 1.8rem; }
+    .hero-content h2 { font-size: 1.2rem; }
+    .profile-image { width: 180px; height: 180px; }
+    .social-links a { width: 44px; height: 44px; font-size: 1.1rem; }
 }
 
 /* Two-column layout for skills on larger screens */
