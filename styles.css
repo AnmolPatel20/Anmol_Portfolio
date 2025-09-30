@@ -852,8 +852,8 @@ footer {
         line-height: 1.2;
     }
     .profile-image {
-        width: 250px;
-        height: 250px;
+        width: 300px;
+        height: 300px;
         aspect-ratio: 1 / 1;
     }
     .nav-links {
@@ -906,8 +906,8 @@ footer {
     }
     
     .profile-image {
-        width: 220px;
-        height: 220px;
+        width: 260px;
+        height: 260px;
     }
     
     .hero-content h1 {
@@ -973,7 +973,7 @@ footer {
         line-height: 1.6;
         font-weight: 600;
     }
-    .profile-image { width: 200px; height: 200px; }
+    .profile-image { width: 240px; height: 240px; }
     .social-links a { 
         width: 44px; 
         height: 44px;
@@ -1011,7 +1011,7 @@ footer {
         line-height: 1.6;
         font-weight: 600;
     }
-    .profile-image { width: 180px; height: 180px; }
+    .profile-image { width: 220px; height: 220px; }
     .social-links a { 
         width: 40px; 
         height: 40px;
