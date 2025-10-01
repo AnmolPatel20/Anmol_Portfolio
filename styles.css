@@ -588,6 +588,7 @@ nav {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    background-image: var(--card-bg, none);
     min-height: 360px;
     display: flex;
 }
@@ -600,16 +601,7 @@ nav {
     z-index: 0;
 }
 
-/* Individual backgrounds for each card */
-.project-card.bg-forest-fire { 
-    background-image: url('images/certificate1.jpg');
-}
-.project-card.bg-flask-app { 
-    background-image: url('images/certificate2.jpg');
-}
-.project-card.bg-automation { 
-    background-image: url('images/certificate3.jpg');
-}
+/* Individual background classes removed in favor of per-card CSS custom property */
 
 .projects.in-view .project-card {
     opacity: 1;
