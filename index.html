@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,12 +8,14 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
+
 <body>
     <header>
         <div class="container">
             <nav>
-                <h1 class="logo">My Portfolio</h1>
-                <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-navigation" aria-expanded="false">
+                <h1 class="logo">Anmol's Portfolio</h1>
+                <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-navigation"
+                    aria-expanded="false">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -20,6 +23,7 @@
                 <ul class="nav-links" id="primary-navigation">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certificates">Certificates</a></li>
                     <li><a href="#contact">Contact</a></li>
@@ -36,12 +40,17 @@
                     <h2>Data Science & Machine Learning Enthusiast</h2>
                     <p>I build data-driven solutions using Python, Machine Learning, and Visualization tools.</p>
                     <div class="social-links">
-                        <a href="https://github.com/AnmolPatel20" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                        <a href="https://www.linkedin.com/in/anmol-patel-a99362284" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://www.youtube.com/@AnmolPy" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                        <a href="https://www.instagram.com/anmol.patel._/#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                        <a href="https://www.facebook.com/share/1B37YivzS3/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                        <a href="mailto:anmolkpatel42@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                        <a href="https://github.com/AnmolPatel20" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/anmol-patel-a99362284" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@AnmolPy" target="_blank" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/techanmol.py/" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1B37YivzS3/" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anmolkpatel42@gmail.com" target="_blank" aria-label="Email via Gmail"><i class="fa-solid fa-envelope"></i></a>
                     </div>
                 </div>
                 <div class="profile-image">
@@ -56,8 +65,12 @@
             <h2 class="section-title">About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>I’m a data science student skilled in Python, Machine Learning, Data Visualization, and Statistical Analysis. My goal is to create intelligent solutions that solve real-world problems.</p>
-                    <p>From data to decisions. Data Science & Machine Learning enthusiast leveraging Python, Pandas, NumPy, Scikit-learn, TensorFlow, Matplotlib, and Seaborn to build smart solutions that solve real-world problems.</p>
+                    <p>I’m a data science student skilled in Python, Machine Learning, Data Visualization, and
+                        Statistical Analysis. My goal is to create intelligent solutions that solve real-world problems.
+                    </p>
+                    <p>From data to decisions. Data Science & Machine Learning enthusiast leveraging Python, Pandas,
+                        NumPy, Scikit-learn, TensorFlow, Matplotlib, and Seaborn to build smart solutions that solve
+                        real-world problems.</p>
                     <div class="skills">
                         <div class="skill-card bg-cover" style="--card-bg: url('images/r1.png');">
                             <div class="skill-info">
@@ -120,14 +133,54 @@
         </div>
     </section>
 
+
+
+    <section id="achievements" class="achievements">
+        <div class="container">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+                <div class="achievement-card bg-cover" style="--card-bg: url('images/GenAILogo.png');"
+                    onclick="window.open('images/GenAI.png', '_blank')">
+                    <div class="achievement-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                        <p>Click to Verify</p>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>GenAI – Value Added Course</h3>
+                        <p class="issuer">Certified in GenerativeAI (16 Hours) – Parul University (NAAC A++) in collaboration with Rishabh Software</p>
+                        <p class="date">July 2025 - Sept 2025</p>
+                        <p class="credential">Parul University × Rishabh Software</p>
+                    </div>
+                </div>
+
+                <div class="achievement-card bg-cover" style="--card-bg: url('images/devopslogo.png');"
+                    onclick="window.open('images/DevopsAI.jpg', '_blank')">
+                    <div class="achievement-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                        <p>Click to Verify</p>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>DevOps Meets AI</h3>
+                        <p class="issuer">Hands-on session on AI-driven DevOps & Cloud Integration – AWS Cloud Club, Parul University (NAAC A++)</p>
+                        <p class="date">June 2025</p>
+                        <p class="credential">Parul University × AWS Cloud Club</p>
+                    </div>
+                </div>
+            
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="projects">
         <div class="container">
-            <h2 class="section-title">My Projects</h2>
+            <h2 class="section-title">Projects</h2>
             <div class="projects-grid">
                 <div class="project-card bg-cover" style="--card-bg: url('images/ForestFirePrediction.jpg');">
                     <div class="project-info">
                         <h3>Forest Fire Prediction</h3>
-                        <p>A data science and ML project analyzing the Algerian Forest Fire dataset with data cleaning, visualization, and multiple regression models (Linear, Lasso, Ridge, Elastic Net) to predict fire metrics.</p>
+                        <p>A data science and ML project analyzing the Algerian Forest Fire dataset with data cleaning,
+                            visualization, and multiple regression models (Linear, Lasso, Ridge, Elastic Net) to predict
+                            fire metrics.</p>
                         <div class="project-tech">
                             <span>Pandas</span>
                             <span>Numpy</span>
@@ -136,15 +189,18 @@
                             <span>scikit-learn</span>
                         </div>
                         <div class="project-links">
-                            <a href="https://forestfireprediction-5o4e.onrender.com/" target="_blank" class="btn btn-sm">View Demo</a>
-                            <a href="https://github.com/AnmolPatel20/ForestFirePrediction" target="_blank" class="btn btn-sm btn-outline">Source Code</a>
+                            <a href="https://forestfireprediction-5o4e.onrender.com/" target="_blank"
+                                class="btn btn-sm">View Demo</a>
+                            <a href="https://github.com/AnmolPatel20/ForestFirePrediction" target="_blank"
+                                class="btn btn-sm btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card bg-cover" style="--card-bg: url('images/project2.jpg');">
                     <div class="project-info">
                         <h3>Chartify</h3>
-                        <p>A Python project demonstrating data visualization techniques with Matplotlib and Seaborn, including bar charts, histograms, scatter plots, subplots, and styled visualizations.</p>
+                        <p>A Python project demonstrating data visualization techniques with Matplotlib and Seaborn,
+                            including bar charts, histograms, scatter plots, subplots, and styled visualizations.</p>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>Matplotlib</span>
@@ -154,14 +210,17 @@
                         </div>
                         <div class="project-links">
                             <a href="images/p2demo.jpg" target="_blank" class="btn btn-sm">View Demo</a>
-                            <a href="https://github.com/AnmolPatel20/Chartify" target="_blank" class="btn btn-sm btn-outline">Source Code</a>
+                            <a href="https://github.com/AnmolPatel20/Chartify" target="_blank"
+                                class="btn btn-sm btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card bg-cover" style="--card-bg: url('images/NUMPY3.png');">
                     <div class="project-info">
                         <h3>NumPy-Essentials</h3>
-                        <p>A project showcasing NumPy essentials, covering array creation, indexing, slicing, broadcasting, mathematical operations, data types, and performance comparisons with pure Python.</p>
+                        <p>A project showcasing NumPy essentials, covering array creation, indexing, slicing,
+                            broadcasting, mathematical operations, data types, and performance comparisons with pure
+                            Python.</p>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>Numpy</span>
@@ -170,14 +229,17 @@
                         </div>
                         <div class="project-links">
                             <a href="images/NumpyDemo.jpg" target="_blank" class="btn btn-sm">View Demo</a>
-                            <a href="https://github.com/AnmolPatel20/numpy-essentials" target="_blank" class="btn btn-sm btn-outline">Source Code</a>
+                            <a href="https://github.com/AnmolPatel20/numpy-essentials" target="_blank"
+                                class="btn btn-sm btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card bg-cover" style="--card-bg: url('images/Pandas.png');">
                     <div class="project-info">
                         <h3>Pandas-Essentials</h3>
-                        <p>A hands-on project exploring Pandas fundamentals through Jupyter Notebooks, covering data structures, selection, cleaning, transformation, aggregation, merging, and reshaping using real datasets.</p>
+                        <p>A hands-on project exploring Pandas fundamentals through Jupyter Notebooks, covering data
+                            structures, selection, cleaning, transformation, aggregation, merging, and reshaping using
+                            real datasets.</p>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>Pandas</span>
@@ -186,14 +248,17 @@
                         </div>
                         <div class="project-links">
                             <a href="images/pandasdemo.jpg" target="_blank" class="btn btn-sm">View Demo</a>
-                            <a href="https://github.com/AnmolPatel20/pandas-essentials" target="_blank" class="btn btn-sm btn-outline">Source Code</a>
+                            <a href="https://github.com/AnmolPatel20/pandas-essentials" target="_blank"
+                                class="btn btn-sm btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card bg-cover" style="--card-bg: url('images/KrushiRaah.png');">
                     <div class="project-info">
                         <h3>KrushiRaah</h3>
-                        <p>AI-Powered Agriculture web app for SIH(2025) that assists farmers with crop recommendations, disease detection, weather forecasting, and market insights to make farming more sustainable and profitable.</p>
+                        <p>AI-Powered Agriculture web app for SIH(2025) that assists farmers with crop recommendations,
+                            disease detection, weather forecasting, and market insights to make farming more sustainable
+                            and profitable.</p>
                         <div class="project-tech">
                             <span>HTML</span>
                             <span>CSS</span>
@@ -206,14 +271,17 @@
                         </div>
                         <div class="project-links">
                             <a href="images/krushiraahdemo.jpg" target="_blank" class="btn btn-sm">View Demo</a>
-                            <a href="https://github.com/AnmolPatel20/KrushiRaah" target="_blank" class="btn btn-sm btn-outline">Source Code</a>
+                            <a href="https://github.com/AnmolPatel20/KrushiRaah" target="_blank"
+                                class="btn btn-sm btn-outline">Source Code</a>
                         </div>
                     </div>
                 </div>
                 <div class="project-card bg-cover" style="--card-bg: url('images/social.jpg');">
                     <div class="project-info">
                         <h3>SmartSocialRecommender</h3>
-                        <p>A Python-based recommendation system that processes and cleans social network data, analyzes user relationships, and generates intelligent friend and page suggestions based on mutual connections and shared interests.</p>
+                        <p>A Python-based recommendation system that processes and cleans social network data, analyzes
+                            user relationships, and generates intelligent friend and page suggestions based on mutual
+                            connections and shared interests.</p>
                         <div class="project-tech">
                             <span>Python</span>
                             <span>VS-Code</span>
@@ -222,96 +290,130 @@
                         </div>
                         <div class="project-links">
                             <a href="images/socialdemo.png" target="_blank" class="btn btn-sm">View Demo</a>
-                            <a href="https://github.com/AnmolPatel20/smart-social-recommender" target="_blank" class="btn btn-sm btn-outline">Source Code</a>
+                            <a href="https://github.com/AnmolPatel20/smart-social-recommender" target="_blank"
+                                class="btn btn-sm btn-outline">Source Code</a>
                         </div>
+                    </div>
+                </div>
+            
+                
+            </div>
+        </div>
+    </section>
+    <section id="certificates" class="certificates">
+        <div class="container">
+            <h2 class="section-title">Certifications</h2>
+            <div class="certificates-grid">
+                <div class="certificate-card"
+                    onclick="window.open('https://www.life-global.org/certificate/2d009291-b0f5-4572-99e8-ae0481806b53', '_blank')">
+                    <div class="certificate-image">
+                        <img src="images/certificate1.jpg" alt="Data Science & Analytics">
+                        <div class="certificate-overlay">
+                            <i class="fas fa-external-link-alt"></i>
+                            <p>Click to Verify</p>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Data Science & Analytics</h3>
+                        <p class="issuer">HP - HP-Life</p>
+                        <p class="date">Issued: July 2025</p>
+                        <p class="credential">Credential ID: 2d009291-b0f5-4572-99e8-ae0481806b53</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card"
+                    onclick="window.open('https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_rPkqX52ZxXQCEQvJT_1758877731635_completion_certificate.pdf', '_blank')">
+                    <div class="certificate-image">
+                        <img src="images/certificate2.jpg"
+                            alt="Data Visualisation: Empowering Business with Effective Insights">
+                        <div class="certificate-overlay">
+                            <i class="fas fa-external-link-alt"></i>
+                            <p>Click to Verify</p>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Data Visualisation: Empowering Business with Effective Insights</h3>
+                        <p class="issuer">TATA - Forage</p>
+                        <p class="date">Issued: September 2025</p>
+                        <p class="credential">Credential ID: 9TDMxjrNWmWkZfSwc</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card"
+                    onclick="window.open('https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_rPkqX52ZxXQCEQvJT_1751732131411_completion_certificate.pdf', '_blank')">
+                    <div class="certificate-image">
+                        <img src="images/certificate3.jpg" alt="Data Analytics Job Simulation">
+                        <div class="certificate-overlay">
+                            <i class="fas fa-external-link-alt"></i>
+                            <p>Click to Verify</p>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Data Analytics Job Simulation</h3>
+                        <p class="issuer">Deloitte - Forage</p>
+                        <p class="date">Issued: July 2025</p>
+                        <p class="credential">Credential ID: foBQbH7q5fXz5baWx</p>
+                    </div>
+                </div>
+
+                <div class="certificate-card" onclick="window.open('https://simpli-web.app.link/e/m46klW0n5Yb')">
+                    <div class="certificate-image">
+                        <img src="images/NLPCertificate.jpg"
+                            alt="Natural Language Processing (NLP) and Text Mining Tutorial for Beginners">
+                        <div class="certificate-overlay">
+                            <i class="fas fa-external-link-alt"></i>
+                            <p>Click to Verify</p>
+                        </div>
+                    </div>
+                    <div class="certificate-info">
+                        <h3>Natural Language Processing (NLP) and Text Mining Tutorial for Beginners </h3>
+                        <p class="issuer">SimpliLearn - SkillUp</p>
+                        <p class="date">Issued: December 2025</p>
+                        <p class="credential">Certificate Code : 9542809</p>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Contact Me</h2>
+            <div class="contact-wrapper">
+                <div class="contact-info">
+                    <p class="contact-subtitle">Feel free to reach out for collaborations or just a friendly hello!</p>
+
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <p>anmolkpatel42@gmail.com</p>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <p>Vadodara[390025], Gujarat, India</p>
+                    </div>
+
+                    <div class="contact-social-links">
+                        <a href="https://mail.google.com/mail/?view=cm&fs=1&to=anmolkpatel42@gmail.com" target="_blank" aria-label="Email via Gmail"><i class="fa-solid fa-envelope"></i></a>
+
+                        <a href="https://github.com/AnmolPatel20" target="_blank" aria-label="GitHub"><i
+                                class="fab fa-github"></i></a>
+                        <a href="https://www.linkedin.com/in/anmol-patel-a99362284" target="_blank"
+                            aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://www.youtube.com/@AnmolPy" target="_blank" aria-label="YouTube"><i
+                                class="fab fa-youtube"></i></a>
+                        <a href="https://www.instagram.com/techanmol.py/" target="_blank" aria-label="Instagram"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.facebook.com/share/1B37YivzS3/" target="_blank" aria-label="Facebook"><i
+                                class="fab fa-facebook"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="certificates" class="certificates">
-    <div class="container">
-        <h2 class="section-title">Certifications</h2>
-        <div class="certificates-grid">
-            <div class="certificate-card" onclick="window.open('https://www.life-global.org/certificate/2d009291-b0f5-4572-99e8-ae0481806b53', '_blank')">
-                <div class="certificate-image">
-                    <img src="images/certificate1.jpg" alt="Data Science & Analytics">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-external-link-alt"></i>
-                        <p>Click to Verify</p>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Data Science & Analytics</h3>
-                    <p class="issuer">HP - HP-Life</p>
-                    <p class="date">Issued: July 2025</p>
-                    <p class="credential">Credential ID: 2d009291-b0f5-4572-99e8-ae0481806b53</p>
-                </div>
-            </div>
-            
-            <div class="certificate-card" onclick="window.open('https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/MyXvBcppsW2FkNYCX_ifobHAoMjQs9s6bKS_rPkqX52ZxXQCEQvJT_1758877731635_completion_certificate.pdf', '_blank')">
-                <div class="certificate-image">
-                    <img src="images/certificate2.jpg" alt="Data Visualisation: Empowering Business with Effective Insights">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-external-link-alt"></i>
-                        <p>Click to Verify</p>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Data Visualisation: Empowering Business with Effective Insights</h3>
-                    <p class="issuer">TATA - Forage</p>
-                    <p class="date">Issued: September 2025</p>
-                    <p class="credential">Credential ID: 9TDMxjrNWmWkZfSwc</p>
-                </div>
-            </div>
-            
-            <div class="certificate-card" onclick="window.open('https://forage-uploads-prod.s3.amazonaws.com/completion-certificates/9PBTqmSxAf6zZTseP/io9DzWKe3PTsiS6GG_9PBTqmSxAf6zZTseP_rPkqX52ZxXQCEQvJT_1751732131411_completion_certificate.pdf', '_blank')">
-                <div class="certificate-image">
-                    <img src="images/certificate3.jpg" alt="Data Analytics Job Simulation">
-                    <div class="certificate-overlay">
-                        <i class="fas fa-external-link-alt"></i>
-                        <p>Click to Verify</p>
-                    </div>
-                </div>
-                <div class="certificate-info">
-                    <h3>Data Analytics Job Simulation</h3>
-                    <p class="issuer">Deloitte - Forage</p>
-                    <p class="date">Issued: July 2025</p>
-                    <p class="credential">Credential ID: foBQbH7q5fXz5baWx</p>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-    
-    <section id="contact" class="contact">
-    <div class="container">
-        <h2 class="section-title">Contact Me</h2>
-        <div class="contact-wrapper">
-            <div class="contact-info">
-                <p class="contact-subtitle">Feel free to reach out for collaborations or just a friendly hello!</p>
-                
-                <div class="contact-item">
-                    <i class="fas fa-envelope"></i>
-                    <p>anmolkpatel42@gmail.com</p>
-                </div>
-                <div class="contact-item">
-                    <i class="fas fa-map-marker-alt"></i>
-                    <p>Vadodara[390025], Gujarat, India</p>
-                </div>
-                
-                <div class="contact-social-links">
-                    <a href="mailto:anmolkpatel42@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
-                    <a href="https://github.com/AnmolPatel20" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/anmol-patel-a99362284" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
-                    <a href="https://www.youtube.com/@AnmolPy" target="_blank" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
-                    <a href="https://www.instagram.com/anmol.patel._/#" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
-                    <a href="https://www.facebook.com/share/1B37YivzS3/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
 
     <footer>
         <div class="container">
@@ -322,6 +424,4 @@
     <script src="script.js"></script>
 </body>
 
-</html> 
-
-
+</html>
