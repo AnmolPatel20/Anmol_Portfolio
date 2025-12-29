@@ -81,20 +81,47 @@ document.addEventListener('DOMContentLoaded', function() {
     // Create fewer particles for background
     createSimplifiedParticles();
 
-    // Contact form submission (if it exists)
-    const contactForm = document.getElementById('contact-form');
+    // Contact form submission with Web3Forms
+    const contactForm = document.querySelector('.contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            const message = document.getElementById('message').value;
-            
-            // Just show an alert for demonstration
-            alert(`Thank you for your message, ${name}! I'll get back to you soon.`);
-            
-            contactForm.reset();
+            const formData = new FormData(contactForm);
+            const object = Object.fromEntries(formData);
+            const json = JSON.stringify(object);
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalButtonText = submitButton.innerHTML;
+
+            submitButton.innerHTML = 'Sending...';
+            submitButton.disabled = true;
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: json
+            })
+            .then(async (response) => {
+                let json = await response.json();
+                if (response.status == 200) {
+                    alert(json.message); // "Form submitted successfully"
+                    contactForm.reset();
+                } else {
+                    console.log(response);
+                    alert(json.message);
+                }
+            })
+            .catch(error => {
+                console.log(error);
+                alert('Something went wrong!');
+            })
+            .finally(() => {
+                submitButton.innerHTML = originalButtonText;
+                submitButton.disabled = false;
+            });
         });
     }
 
