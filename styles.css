@@ -541,14 +541,7 @@ nav {
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    opacity: 0;
-    transform: translateY(20px);
     transition: var(--transition);
-}
-
-.about.in-view .about-text p {
-    opacity: 1;
-    transform: translateY(0);
 }
 
 .skills {
@@ -587,8 +580,6 @@ nav {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(30px);
     position: relative;
     min-height: 200px;
     display: flex;
@@ -653,26 +644,7 @@ nav {
     border-radius: 50px;
 }
 
-.about.in-view .skill-card {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.about.in-view .skill-card:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.about.in-view .skill-card:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.about.in-view .skill-card:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.about.in-view .skill-card:nth-child(4) {
-    transition-delay: 0.4s;
-}
 
 @media (max-width: 768px) {
     .column-list {
@@ -680,10 +652,7 @@ nav {
     }
 }
 
-.about.in-view .skills-list li {
-    transform: translateY(0);
-    opacity: 1;
-}
+
 
 .skills-list li:hover {
     transform: translateY(-5px) scale(1.05);
@@ -718,8 +687,6 @@ nav {
     overflow: hidden;
     box-shadow: var(--shadow);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    opacity: 0;
-    transform: translateY(30px);
     position: relative;
 }
 
@@ -743,18 +710,7 @@ nav {
 
 /* Individual background classes removed in favor of per-card CSS custom property */
 
-.projects.in-view .project-card {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.projects.in-view .project-card:nth-child(2) {
-    transition-delay: 0.1s;
-}
-
-.projects.in-view .project-card:nth-child(3) {
-    transition-delay: 0.2s;
-}
 
 .project-card::before {
     content: '';
@@ -887,8 +843,6 @@ nav {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
     overflow: hidden;
-    opacity: 0;
-    transform: translateY(20px);
 }
 
 .contact.in-view .contact-social-links a {
@@ -927,34 +881,7 @@ nav {
 }
 
 
-.contact.in-view .contact-social-links a {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.contact.in-view .contact-social-links a:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.contact.in-view .contact-social-links a:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.contact.in-view .contact-social-links a:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.contact.in-view .contact-social-links a:nth-child(4) {
-    transition-delay: 0.4s;
-}
-
-.contact.in-view .contact-social-links a:nth-child(5) {
-    transition-delay: 0.5s;
-}
-
-.contact.in-view .contact-social-links a:nth-child(6) {
-    transition-delay: 0.6s;
-}
 
 .contact-social-links a::before {
     content: '';
@@ -1444,25 +1371,6 @@ li {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    opacity: 0;
-    transform: translateY(30px);
-}
-
-.certificates.in-view .certificate-card {
-    opacity: 1;
-    transform: translateY(0);
-}
-
-.certificates.in-view .certificate-card:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.certificates.in-view .certificate-card:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.certificates.in-view .certificate-card:nth-child(3) {
-    transition-delay: 0.3s;
 }
 
 .certificate-card:hover {
@@ -1762,8 +1670,6 @@ li {
     cursor: pointer;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     position: relative;
-    opacity: 0;
-    transform: translateY(30px);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
@@ -1792,26 +1698,7 @@ li {
     background: linear-gradient(to bottom, rgba(18, 18, 18, 0.4), rgba(18, 18, 18, 0.98));
 }
 
-.achievements.in-view .achievement-card {
-    opacity: 1;
-    transform: translateY(0);
-}
 
-.achievements.in-view .achievement-card:nth-child(1) {
-    transition-delay: 0.1s;
-}
-
-.achievements.in-view .achievement-card:nth-child(2) {
-    transition-delay: 0.2s;
-}
-
-.achievements.in-view .achievement-card:nth-child(3) {
-    transition-delay: 0.3s;
-}
-
-.achievements.in-view .achievement-card:nth-child(4) {
-    transition-delay: 0.4s;
-}
 
 .achievement-card:hover {
     transform: translateY(-10px) scale(1.02);
