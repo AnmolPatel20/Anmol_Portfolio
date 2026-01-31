@@ -23,6 +23,7 @@
                 <ul class="nav-links" id="primary-navigation">
                     <li><a href="#home">Home</a></li>
                     <li><a href="#about">About</a></li>
+                    <li><a href="#experience">Experience</a></li>
                     <li><a href="#achievements">Achievements</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#certificates">Certificates</a></li>
@@ -36,7 +37,8 @@
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
-                    <h1>Hello! I’m <span class="highlight">ANMOL PATEL</span></h1>
+                    <h1>Hello! I’m <span class="highlight" id="typing-text"></span><span class="typing-cursor"></span>
+                    </h1>
                     <h2>Data Science & Machine Learning Enthusiast</h2>
                     <p>I build data-driven solutions using Python, Machine Learning, and Visualization tools.</p>
                     <div class="social-links">
@@ -53,21 +55,32 @@
                         <a href="https://mail.google.com/mail/?view=cm&fs=1&to=inquiry.anmol20@gmail.com"
                             target="_blank" aria-label="Email via Gmail"><i class="fa-solid fa-envelope"></i></a>
                     </div>
-                    <div class="hero-buttons">
-                        <a href="images/resume.pdf" target="_blank" class="btn btn-resume">
-                            <i class="fas fa-eye"></i>
-                            <div class="btn-text">
-                                <span>VIEW</span>
-                                <span>RESUME</span>
+                    <div class="hero-buttons-container">
+                        <div class="hero-buttons-column">
+                            <div class="hero-buttons">
+                                <a href="images/resume.pdf" target="_blank" class="btn btn-resume">
+                                    <i class="fas fa-eye"></i>
+                                    <div class="btn-text">
+                                        <span>VIEW</span>
+                                        <span>RESUME</span>
+                                    </div>
+                                </a>
+                                <a href="images/resume.pdf" download class="btn btn-resume">
+                                    <i class="fas fa-download"></i>
+                                    <div class="btn-text">
+                                        <span>DOWNLOAD</span>
+                                        <span>RESUME</span>
+                                    </div>
+                                </a>
                             </div>
-                        </a>
-                        <a href="images/resume.pdf" download class="btn btn-resume">
-                            <i class="fas fa-download"></i>
-                            <div class="btn-text">
-                                <span>DOWNLOAD</span>
-                                <span>RESUME</span>
-                            </div>
-                        </a>
+                            <a href="https://anmolpatel20.github.io/GATE-DA/" class="btn btn-resume btn-gate">
+                                <i class="fas fa-external-link-alt"></i>
+                                <div class="btn-text">
+                                    <span>VISIT MY</span>
+                                    <span>GATE WEBSITE</span>
+                                </div>
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="profile-image">
@@ -152,6 +165,46 @@
 
 
 
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Work Experience</h2>
+            <div class="experience-container">
+                <div class="timeline">
+                    <!-- Example Experience Item 1 -->
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-content bg-cover" style="--card-bg: url('images/MaincraftBG.png');">
+                            <h3>Data Science Intern</h3>
+                            <p class="company">Maincrafts Technology</p>
+                            <p class="period">January 2026 – Present</p>
+                            <p class="description">
+                                Working as a Data Science & Data Analytics Intern using Python,
+focusing on data cleaning, analysis, visualization, and
+extracting meaningful insights from real-world datasets.
+
+                            </p>
+                            <div class="experience-actions">
+                                <a href="images/Maincrafts Offer Letter.pdf" target="_blank" class="experience-btn">
+                                    <i class="fas fa-file-alt"></i> Offer Letter
+                                </a>
+                                <a href="https://github.com/AnmolPatel20/Internship-MainCrafts" target="_blank"
+                                    class="experience-btn">
+                                    <i class="fab fa-github"></i> Project Tasks
+                                </a>
+                                <a href="#" target="_blank" class="experience-btn">
+                                    <div class="experience-btn-text">
+                                        <i class="fas fa-certificate"></i> Certification
+                                    </div>
+                                    <span class="coming-soon-text">On The Way</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="achievements" class="achievements">
         <div class="container">
             <h2 class="section-title">Achievements</h2>
@@ -214,7 +267,8 @@
                     <div class="achievement-info">
                         <h3>NationBuilding – Case Study Competition 2026</h3>
                         <p class="issuer">
-                            Certified for Participation in the Online Quiz Round – NationBuilding Case Study Competition 2026
+                            Certified for Participation in the Online Quiz Round – NationBuilding Case Study Competition
+                            2026
                             Conducted on Unstop 2026
                         </p>
                         <p class="date">January 2026</p>
@@ -430,7 +484,8 @@
                     </div>
                 </div>
 
-                <div class="certificate-card" onclick="window.open('https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_rPkqX52ZxXQCEQvJT_1767367502492_completion_certificate.pdf', '_blank')">
+                <div class="certificate-card"
+                    onclick="window.open('https://www.theforage.com/completion-certificates/ifobHAoMjQs9s6bKS/gMTdCXwDdLYoXZ3wG_ifobHAoMjQs9s6bKS_rPkqX52ZxXQCEQvJT_1767367502492_completion_certificate.pdf', '_blank')">
                     <div class="certificate-image">
                         <img src="images/GenAI(TATA).jpg" alt="GenAI Powered Data Analytics Job Simulation">
                         <div class="certificate-overlay">
