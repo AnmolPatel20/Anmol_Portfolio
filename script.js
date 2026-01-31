@@ -183,4 +183,30 @@ function createSimplifiedParticles() {
 
         particlesContainer.appendChild(particle);
     }
-} 
+}
+
+// Typing Animation
+document.addEventListener('DOMContentLoaded', function () {
+    const textElement = document.getElementById('typing-text');
+    const cursorElement = document.querySelector('.typing-cursor');
+    const textToType = "ANMOL PATEL";
+    const typingDelay = 200; // Speed of typing
+    const startDelay = 1000; // 1 seconds delay before starting
+
+    if (textElement) {
+        setTimeout(() => {
+            let charIndex = 0;
+            function type() {
+                if (charIndex < textToType.length) {
+                    textElement.textContent += textToType.charAt(charIndex);
+                    charIndex++;
+                    setTimeout(type, typingDelay);
+                } else {
+                    // Animation finished
+                    if (cursorElement) cursorElement.style.display = 'none'; // Optional: hide cursor after typing
+                }
+            }
+            type();
+        }, startDelay);
+    }
+}); 
