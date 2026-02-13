@@ -579,6 +579,7 @@ nav {
     margin-bottom: 20px;
     font-size: 1.1rem;
     transition: var(--transition);
+    text-align: justify;
 }
 
 .skills {
@@ -713,7 +714,7 @@ nav {
 }
 
 .experience-container {
-    max-width: 800px;
+    max-width: 1000px;
     margin: 0 auto;
     position: relative;
     padding-left: 30px;
@@ -799,6 +800,20 @@ nav {
 
 .timeline-content.bg-cover:hover {
     border: 1px solid var(--accent-color);
+}
+
+.timeline-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 15px;
+    margin-bottom: 5px;
+}
+
+.timeline-title-group {
+    display: flex;
+    flex-direction: column;
 }
 
 .timeline-content h3 {
@@ -1152,8 +1167,8 @@ footer {
         min-height: 100vh;
         /* avoid overflow from fixed address bars */
         height: auto;
-        padding-top: 140px;
-        /* reduce extra top space */
+        padding-top: 100px;
+        /* Reduced from 140px to move image up */
         padding-bottom: 120px;
         /* ensure social icons visible */
     }
@@ -1193,7 +1208,7 @@ footer {
         display: flex;
         flex-direction: column;
         gap: 10px;
-        background: rgba(0, 217, 255, 0.1);
+        background: rgba(0, 217, 255, 0.163);
         border-radius: 10px 0 0 10px;
         padding: 15px;
         box-shadow: var(--shadow);
@@ -1227,39 +1242,57 @@ footer {
     .hero-content {
         flex-direction: column-reverse;
         text-align: center;
-        gap: 30px;
+        gap: 25px;
+        padding: 20px;
+        /* Single balanced padding for parent */
+        width: 100%;
+        margin: 0 auto;
     }
 
     .hero-text {
-        padding: 0 20px;
+        padding: 0;
+        /* Remove nested padding */
         text-align: center;
-        /* ensure hero text centered on mobile */
         margin: 0 auto;
-        max-width: 100%;
+        width: 100%;
     }
 
     .profile-image {
-        width: 310px;
-        height: 310px;
+        width: 290px;
+        height: 290px;
+        margin: 0 auto;
     }
 
     .hero-content h1 {
-        font-size: 1.6rem;
-        line-height: 1.1;
+        font-size: clamp(1.4rem, 6vw, 2.2rem);
+        /* Increased size for mobile */
+        line-height: 1.2;
         font-weight: 700;
         white-space: nowrap;
+        margin-bottom: 10px;
+        overflow: visible;
     }
 
     .hero-content h2 {
-        font-size: 1.3rem;
-        line-height: 1.2;
+        font-size: 1.2rem;
+        line-height: 1.4;
         font-weight: 600;
+        margin-bottom: 15px;
+        color: var(--accent-color);
     }
 
     .hero-content p {
-        font-size: 1.0rem;
-        line-height: 1.6;
+        font-size: 1rem;
+        line-height: 1.7;
         font-weight: 400;
+        text-align: center;
+        padding: 0;
+        /* Remove specific side padding */
+        color: var(--light-text);
+        max-width: 100%;
+        /* Allow full width within parent padding */
+        margin: 0 auto 25px auto;
+        /* Center with bottom margin */
     }
 
     .social-links {
@@ -1279,6 +1312,61 @@ footer {
 
     section {
         padding: 60px 0;
+    }
+
+    /* About Me Mobile Optimization */
+    .about-content {
+        padding: 0 10px;
+    }
+
+    .about-text p {
+        font-size: 1rem;
+        /* Adjust font size */
+        line-height: 1.8;
+        /* Increase line height */
+        padding: 0 5px;
+        /* Add side padding */
+    }
+
+    .hero-buttons-column {
+        width: 100%;
+        max-width: 290px;
+        /* Align with social icons width approx 288px */
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        gap: 15px;
+        width: 100%;
+        align-items: stretch;
+    }
+
+    .btn-resume {
+        width: 100%;
+        max-width: 100%;
+        padding: 12px 20px;
+        justify-content: center;
+        gap: 30px;
+        /* Increase spacing between icon and text */
+    }
+
+    .btn-text span:first-child,
+    .btn-text span:last-child {
+        font-size: 0.8rem;
+        /* Smaller text size */
+    }
+
+    .btn-resume.btn-gate {
+        border-width: 1px;
+    }
+
+    .section-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
     }
 }
 
@@ -1326,6 +1414,10 @@ footer {
         max-height: 44px;
         font-size: 1.1rem;
         flex-shrink: 0;
+    }
+
+    .hero-buttons-column {
+        max-width: 270px;
     }
 }
 
@@ -1377,6 +1469,10 @@ footer {
 
     .social-links {
         gap: 10px;
+    }
+
+    .hero-buttons-column {
+        max-width: 240px;
     }
 }
 
@@ -1843,6 +1939,28 @@ li {
         width: 100%;
         align-items: center;
         text-align: center;
+    }
+
+    .contact-info {
+        padding: 0 20px;
+        /* Balanced horizontal padding */
+    }
+
+    .contact-subtitle {
+        max-width: 90%;
+        margin-left: auto;
+        margin-right: auto;
+        line-height: 1.6;
+        font-size: 0.95rem;
+        /* Slightly smaller text */
+        text-align: justify;
+    }
+
+    .contact-item {
+        justify-content: center;
+        /* Keep items centered */
+        margin-bottom: 20px;
+        /* Better spacing */
     }
 
     .contact-form-container {
