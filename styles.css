@@ -2179,3 +2179,147 @@ li {
         font-size: 0.8rem;
     }
 }
+
+/* Certificate Category Boxes */
+.category-blocks {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+}
+
+@media (max-width: 1024px) {
+    .category-blocks {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 576px) {
+    .category-blocks {
+        grid-template-columns: 1fr;
+    }
+}
+
+.category-box {
+    background-color: var(--bg-secondary);
+    border-radius: var(--border-radius);
+    padding: 30px 20px;
+    text-align: center;
+    cursor: pointer;
+    box-shadow: var(--shadow);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.category-box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: var(--accent-color);
+}
+
+.category-box i {
+    font-size: 3rem;
+    color: var(--accent-color);
+    margin-bottom: 20px;
+}
+
+.category-box h4 {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+.category-box p {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin-bottom: 14px;
+}
+
+.cert-count {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    color: white;
+    font-size: 0.78rem;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 50px;
+    letter-spacing: 0.5px;
+    margin-top: 4px;
+}
+
+/* Certifications Lightbox */
+
+/* Lightbox grid: fixed 3-col layout, cards never stretch */
+#lightbox-certificates-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 320px);
+    gap: 30px;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+@media (max-width: 1100px) {
+    #lightbox-certificates-grid {
+        grid-template-columns: repeat(2, 320px);
+    }
+}
+
+@media (max-width: 720px) {
+    #lightbox-certificates-grid {
+        grid-template-columns: 320px;
+    }
+}
+
+.cert-lightbox {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-y: auto;
+    background-color: rgba(18, 18, 18, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+.cert-lightbox-content {
+    background-color: var(--bg-color);
+    margin: 5% auto;
+    padding: 40px;
+    border: 1px solid var(--accent-color);
+    width: 90%;
+    max-width: 1200px;
+    border-radius: var(--border-radius);
+    position: relative;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 217, 255, 0.07);
+    animation: zoomIn 0.3s ease;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.cert-close-btn {
+    color: var(--light-text);
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cert-close-btn:hover,
+.cert-close-btn:focus {
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
