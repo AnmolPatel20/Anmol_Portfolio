@@ -210,3 +210,50 @@ document.addEventListener('DOMContentLoaded', function () {
         }, startDelay);
     }
 }); 
+
+// Certificates Lightbox functionality
+function openCertLightbox(category, title) {
+    const lightbox = document.getElementById('cert-lightbox');
+    const titleElement = document.getElementById('lightbox-category-title');
+    const gridElement = document.getElementById('lightbox-certificates-grid');
+    const hiddenCerts = document.getElementById('hidden-certificates');
+    
+    if(!lightbox || !titleElement || !gridElement || !hiddenCerts) return;
+
+    // Set title
+    titleElement.textContent = title;
+    
+    // Clear previous certificates
+    gridElement.innerHTML = '';
+    
+    // Find matching certificates and clone them
+    const matchingCerts = hiddenCerts.querySelectorAll(`.certificate-card[data-category="${category}"]`);
+    
+    matchingCerts.forEach(cert => {
+        gridElement.appendChild(cert.cloneNode(true));
+    });
+    
+    // Show lightbox
+    lightbox.style.display = 'block';
+    
+    // Prevent background scrolling
+    document.body.style.overflow = 'hidden';
+}
+
+function closeCertLightbox() {
+    const lightbox = document.getElementById('cert-lightbox');
+    if(lightbox) {
+        lightbox.style.display = 'none';
+    }
+    
+    // Restore background scrolling
+    document.body.style.overflow = 'auto';
+}
+
+// Close lightbox when clicking outside the content
+window.addEventListener('click', function(event) {
+    const lightbox = document.getElementById('cert-lightbox');
+    if (event.target === lightbox) {
+        closeCertLightbox();
+    }
+});
