@@ -1,5 +1,23 @@
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', function () {
+
+    // ===== Theme Toggle (Light / Dark Mode) =====
+    const themeToggle = document.getElementById('theme-toggle');
+    const savedTheme = localStorage.getItem('theme');
+
+    // Apply saved theme on load
+    if (savedTheme === 'light') {
+        document.body.classList.add('light-mode');
+        if (themeToggle) themeToggle.checked = true;
+    }
+
+    if (themeToggle) {
+        themeToggle.addEventListener('change', function () {
+            const isLight = this.checked;
+            document.body.classList.toggle('light-mode', isLight);
+            localStorage.setItem('theme', isLight ? 'light' : 'dark');
+        });
+    }
     // Smooth scrolling for navigation links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
@@ -110,39 +128,50 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    // Hamburger toggle for mobile (re-added)
-    const menuToggle = document.querySelector('.menu-toggle');
-    const navLinks = document.getElementById('primary-navigation');
-    if (menuToggle && navLinks) {
-        const closeMenu = () => {
-            navLinks.classList.remove('open');
-            menuToggle.setAttribute('aria-expanded', 'false');
-            menuToggle.classList.remove('active');
-        };
+    // Bottom Navigation Bar – active section tracking
+    const bottomNavItems = document.querySelectorAll('.bottom-nav-item');
+    const sections = document.querySelectorAll('section[id]');
 
-        menuToggle.addEventListener('click', function () {
-            const isOpen = navLinks.classList.toggle('open');
-            menuToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-            menuToggle.classList.toggle('active', isOpen);
+    // Click handler for bottom nav items
+    bottomNavItems.forEach(item => {
+        item.addEventListener('click', function (e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href');
+            const targetEl = document.querySelector(targetId);
+            if (targetEl) {
+                window.scrollTo({
+                    top: targetEl.offsetTop - 70,
+                    behavior: 'smooth'
+                });
+            }
+            // Set active immediately
+            bottomNavItems.forEach(n => n.classList.remove('active'));
+            this.classList.add('active');
         });
+    });
 
-        // Close on link click (single page anchors)
-        navLinks.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                if (window.matchMedia('(max-width: 768px)').matches) {
-                    closeMenu();
-                }
-            });
-        });
+    // Scroll spy: highlight the nav item for the section currently in view
+    function updateActiveNav() {
+        let currentSection = '';
+        const scrollPos = window.scrollY + 150;
 
-        // Close when clicking outside
-        document.addEventListener('click', (e) => {
-            const clickedInside = navLinks.contains(e.target) || menuToggle.contains(e.target);
-            if (!clickedInside && navLinks.classList.contains('open')) {
-                closeMenu();
+        sections.forEach(section => {
+            const top = section.offsetTop;
+            const height = section.offsetHeight;
+            if (scrollPos >= top && scrollPos < top + height) {
+                currentSection = section.getAttribute('id');
             }
         });
+
+        if (currentSection) {
+            bottomNavItems.forEach(item => {
+                item.classList.toggle('active', item.getAttribute('data-section') === currentSection);
+            });
+        }
     }
+
+    window.addEventListener('scroll', updateActiveNav);
+    updateActiveNav(); // Run once on load
 });
 
 // Simplified function to create fewer animated particles in the background
@@ -255,5 +284,52 @@ window.addEventListener('click', function(event) {
     const lightbox = document.getElementById('cert-lightbox');
     if (event.target === lightbox) {
         closeCertLightbox();
+    }
+});
+
+// Horizontal Scrolling for Roadmap
+document.addEventListener('DOMContentLoaded', function () {
+    const roadmapWrapper = document.querySelector('.roadmap-wrapper');
+    if (roadmapWrapper) {
+        roadmapWrapper.addEventListener('wheel', function (evt) {
+            // Only capture if scrolling vertically
+            if (evt.deltaY !== 0) {
+                const maxScrollLeft = roadmapWrapper.scrollWidth - roadmapWrapper.clientWidth;
+                
+                // Scrolling Down (Move Right)
+                if (evt.deltaY > 0 && roadmapWrapper.scrollLeft < maxScrollLeft - 2) {
+                    evt.preventDefault();
+                    roadmapWrapper.scrollLeft += (evt.deltaY * 0.5);
+                }
+                // Scrolling Up (Move Left)
+                else if (evt.deltaY < 0 && roadmapWrapper.scrollLeft > 2) {
+                    evt.preventDefault();
+                    roadmapWrapper.scrollLeft += (evt.deltaY * 0.5);
+                }
+            }
+        }, { passive: false }); // Needs to be passive false to preventDefault
+        
+        // Journey Navigation Buttons
+        const startBtn = document.getElementById('journey-start');
+        const currentBtn = document.getElementById('journey-current');
+        
+        if (startBtn) {
+            startBtn.addEventListener('click', () => {
+                roadmapWrapper.scrollTo({
+                    left: 0,
+                    behavior: 'smooth'
+                });
+            });
+        }
+        
+        if (currentBtn) {
+            currentBtn.addEventListener('click', () => {
+                const maxScrollLeft = roadmapWrapper.scrollWidth - roadmapWrapper.clientWidth;
+                roadmapWrapper.scrollTo({
+                    left: maxScrollLeft,
+                    behavior: 'smooth'
+                });
+            });
+        }
     }
 });
