@@ -14,26 +14,74 @@
         <div class="container">
             <nav>
                 <h1 class="logo">Anmol's Portfolio</h1>
-                <button class="menu-toggle" aria-label="Open menu" aria-controls="primary-navigation"
-                    aria-expanded="false">
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                    <span class="bar"></span>
-                </button>
-                <ul class="nav-links" id="primary-navigation">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#achievements">Achievements</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
+                <label class="theme-switch" for="theme-toggle" aria-label="Toggle light/dark mode">
+                    <input type="checkbox" id="theme-toggle">
+                    <span class="slider">
+                        <i class="fas fa-moon slider-icon icon-dark"></i>
+                        <i class="fas fa-sun slider-icon icon-light"></i>
+                    </span>
+                </label>
             </nav>
         </div>
     </header>
 
+    <!-- Bottom Navigation Bar -->
+    <nav class="bottom-nav" id="bottom-nav">
+        <a href="#home" class="bottom-nav-item active" data-section="home">
+            <i class="fas fa-home"></i>
+            <span>Home</span>
+        </a>
+        <a href="#about" class="bottom-nav-item" data-section="about">
+            <i class="fas fa-user"></i>
+            <span>About</span>
+        </a>
+        <a href="#journey" class="bottom-nav-item" data-section="journey">
+            <i class="fas fa-route"></i>
+            <span>Journey</span>
+        </a>
+        <a href="#experience" class="bottom-nav-item" data-section="experience">
+            <i class="fas fa-briefcase"></i>
+            <span class="full-label">Experience</span>
+            <span class="short-label">Exp.</span>
+        </a>
+        <a href="#achievements" class="bottom-nav-item" data-section="achievements">
+            <i class="fas fa-trophy"></i>
+            <span class="full-label">Achievements</span>
+            <span class="short-label">Achieve.</span>
+        </a>
+        <a href="#projects" class="bottom-nav-item" data-section="projects">
+            <i class="fas fa-code"></i>
+            <span>Projects</span>
+        </a>
+        <a href="#certificates" class="bottom-nav-item" data-section="certificates">
+            <i class="fas fa-certificate"></i>
+            <span class="full-label">Certificates</span>
+            <span class="short-label">Certs.</span>
+        </a>
+        <a href="#contact" class="bottom-nav-item" data-section="contact">
+            <i class="fas fa-envelope"></i>
+            <span>Contact</span>
+        </a>
+    </nav>
+
     <section id="home" class="hero">
+        <div class="scrolling-strip">
+            <div class="scrolling-content">
+                <span>PYTHON</span> <i class="fas fa-asterisk"></i>
+                <span>DATA SCIENCE</span> <i class="fas fa-asterisk"></i>
+                <span>DATA ANALYTICS</span> <i class="fas fa-asterisk"></i>
+                <span>DATA VISUALIZATION</span> <i class="fas fa-asterisk"></i>
+                <span>MACHINE LEARNING</span> <i class="fas fa-asterisk"></i>
+                <span>DEEP LEARNING</span> <i class="fas fa-asterisk"></i>
+                <!-- duplicate for seamless loop -->
+                <span>PYTHON</span> <i class="fas fa-asterisk"></i>
+                <span>DATA SCIENCE</span> <i class="fas fa-asterisk"></i>
+                <span>DATA ANALYTICS</span> <i class="fas fa-asterisk"></i>
+                <span>DATA VISUALIZATION</span> <i class="fas fa-asterisk"></i>
+                <span>MACHINE LEARNING</span> <i class="fas fa-asterisk"></i>
+                <span>DEEP LEARNING</span> <i class="fas fa-asterisk"></i>
+            </div>
+        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
@@ -73,18 +121,12 @@
                                     </div>
                                 </a>
                             </div>
-                            <a href="https://anmolpatel20.github.io/GATE-DA/" class="btn btn-resume btn-gate">
-                                <i class="fas fa-external-link-alt"></i>
-                                <div class="btn-text">
-                                    <span>VISIT MY</span>
-                                    <span>GATE WEBSITE</span>
-                                </div>
-                            </a>
                         </div>
                     </div>
                 </div>
                 <div class="profile-image">
-                    <img src="images/ANMOL.jpg" alt="Your Profile Picture">
+                    <img src="images/ANMOL.png" class="img-dark" alt="Your Profile Picture">
+                    <img src="images/ANMOL2.png" class="img-light" alt="Your Profile Picture">
                 </div>
             </div>
         </div>
@@ -162,6 +204,134 @@
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="journey" class="journey">
+        <div class="journey-sticky-container">
+            <div class="container journey-header">
+                <h2 class="section-title">My Journey</h2>
+                <a href="https://anmolpatel20.github.io/GATE-DA/" target="_blank" class="btn btn-sm btn-outline" style="margin-top: -15px;"><i class="fas fa-external-link-alt"></i> Visit My GATE Website</a>
+                <div class="journey-controls">
+                    <button id="journey-start" class="btn btn-sm btn-outline"><i class="fas fa-step-backward"></i> Start</button>
+                    <button id="journey-current" class="btn btn-sm"><i class="fas fa-map-marker-alt"></i> Current</button>
+                </div>
+            </div>
+            <div class="journey-content">
+                <div class="roadmap-wrapper">
+                    <div class="roadmap-track">
+                        <!-- SVG Road -->
+                            <!-- SVG Road -->
+                        <svg class="road-svg" width="4200" height="500" viewBox="0 0 4200 500" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <!-- 3D Shadow (offset down) -->
+                            <path d="M30,250 C80,250 150,150 300,150 C450,150 450,350 600,350 C750,350 750,150 900,150 C1050,150 1050,350 1200,350 C1350,350 1350,150 1500,150 C1650,150 1650,350 1800,350 C1950,350 1950,150 2100,150 C2250,150 2250,350 2400,350 C2550,350 2550,150 2700,150 C2850,150 2850,350 3000,350 C3150,350 3150,150 3300,150 C3450,150 3450,350 3600,350 C3750,350 3750,150 3900,150 L4200,150"
+                                stroke="#555555" stroke-width="36" stroke-linecap="round" stroke-linejoin="round" transform="translate(0,10)"/>
+                            <!-- Main Road -->
+                            <path d="M30,250 C80,250 150,150 300,150 C450,150 450,350 600,350 C750,350 750,150 900,150 C1050,150 1050,350 1200,350 C1350,350 1350,150 1500,150 C1650,150 1650,350 1800,350 C1950,350 1950,150 2100,150 C2250,150 2250,350 2400,350 C2550,350 2550,150 2700,150 C2850,150 2850,350 3000,350 C3150,350 3150,150 3300,150 C3450,150 3450,350 3600,350 C3750,350 3750,150 3900,150 L4200,150"
+                                stroke="#808080" stroke-width="36" stroke-linecap="round" stroke-linejoin="round"/>
+                            <!-- Dashed Center Line -->
+                            <path d="M30,250 C80,250 150,150 300,150 C450,150 450,350 600,350 C750,350 750,150 900,150 C1050,150 1050,350 1200,350 C1350,350 1350,150 1500,150 C1650,150 1650,350 1800,350 C1950,350 1950,150 2100,150 C2250,150 2250,350 2400,350 C2550,350 2550,150 2700,150 C2850,150 2850,350 3000,350 C3150,350 3150,150 3300,150 C3450,150 3450,350 3600,350 C3750,350 3750,150 3900,150 L4200,150"
+                                stroke="rgba(255,255,255,0.6)" stroke-width="4" stroke-dasharray="20,16" stroke-linecap="round"/>
+                            <!-- Connector lines (dot to card) -->
+                            <line x1="300" y1="130" x2="300" y2="110" stroke="#808080" stroke-width="6"/>
+                            <line x1="600" y1="370" x2="600" y2="390" stroke="#808080" stroke-width="6"/>
+                            <line x1="900" y1="130" x2="900" y2="110" stroke="#808080" stroke-width="6"/>
+                            <line x1="1200" y1="370" x2="1200" y2="390" stroke="#808080" stroke-width="6"/>
+                            <line x1="1500" y1="130" x2="1500" y2="110" stroke="#808080" stroke-width="6"/>
+                            <line x1="1800" y1="370" x2="1800" y2="390" stroke="#808080" stroke-width="6"/>
+                            <line x1="2100" y1="130" x2="2100" y2="110" stroke="#808080" stroke-width="6"/>
+                            <line x1="2400" y1="370" x2="2400" y2="390" stroke="#808080" stroke-width="6"/>
+                            <line x1="2700" y1="130" x2="2700" y2="110" stroke="#808080" stroke-width="6"/>
+                            <line x1="3000" y1="370" x2="3000" y2="390" stroke="#808080" stroke-width="6"/>
+                            <line x1="3300" y1="130" x2="3300" y2="110" stroke="#808080" stroke-width="6"/>
+                            <line x1="3600" y1="370" x2="3600" y2="390" stroke="#808080" stroke-width="6"/>
+                            <line x1="3900" y1="130" x2="3900" y2="110" stroke="#808080" stroke-width="6"/>
+                            <!-- Dots on road -->
+                            <circle cx="30" cy="250" r="22" fill="white" stroke="#808080" stroke-width="8"/>
+                            <circle cx="300" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="600" cy="350" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="900" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="1200" cy="350" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="1500" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="1800" cy="350" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="2100" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="2400" cy="350" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="2700" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="3000" cy="350" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="3300" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="3600" cy="350" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <circle cx="3900" cy="150" r="14" fill="white" stroke="#808080" stroke-width="6"/>
+                            <!-- Evolving Text -->
+                            <text class="evolving-text" x="4180" y="140" font-weight="bold" font-size="22" font-style="italic" text-anchor="end" font-family="system-ui, -apple-system, sans-serif" letter-spacing="2">Evolving...</text>
+                        </svg>
+                        <!-- Phase Cards -->
+                        <a href="https://github.com/AnmolPatel20/python-refresher-notebook" target="_blank" class="phase-card phase-top" style="left: 125px; bottom: 390px;">
+                            <div class="phase-no">PHASE 01</div>
+                            <h3>Programming Foundation</h3>
+                            <p>Started with Python fundamentals, logic building & core concepts.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/smart-social-recommender" target="_blank" class="phase-card phase-bottom" style="left: 425px; top: 390px;">
+                            <div class="phase-no">PHASE 02</div>
+                            <h3>Pure Python Project</h3>
+                            <p>Built logic to suggest connections of users based on their interests using Python.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/numpy-essentials" target="_blank" class="phase-card phase-top" style="left: 725px; bottom: 390px;">
+                            <div class="phase-no">PHASE 03</div>
+                            <h3>Learning NumPy</h3>
+                            <p>Worked with arrays and fast numerical computations.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/pandas-essentials" target="_blank" class="phase-card phase-bottom" style="left: 1025px; top: 390px;">
+                            <div class="phase-no">PHASE 04</div>
+                            <h3>Mastering Pandas</h3>
+                            <p>Handled real-world datasets through cleaning & transformation.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/Chartify" target="_blank" class="phase-card phase-top" style="left: 1325px; bottom: 390px;">
+                            <div class="phase-no">PHASE 05</div>
+                            <h3>Exploring Data Visualization</h3>
+                            <p>Turned data into insights using plots and charts.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/Internship-MainCrafts" target="_blank" class="phase-card phase-bottom" style="left: 1625px; top: 390px;">
+                            <div class="phase-no">PHASE 06</div>
+                            <h3>Gaining Practical Experience</h3>
+                            <p>Worked on real datasets and applied data analysis during internship.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/InstaParseX-Unstructured_to_Structured" target="_blank" class="phase-card phase-top" style="left: 1925px; bottom: 390px;">
+                            <div class="phase-no">PHASE 07</div>
+                            <h3>Working with Real Data</h3>
+                            <p>Processed unstructured data into structured, usable formats using Python.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/ForestFirePrediction" target="_blank" class="phase-card phase-bottom" style="left: 2225px; top: 390px;">
+                            <div class="phase-no">PHASE 08</div>
+                            <h3>Experimenting with Basic ML Algo</h3>
+                            <p>Compared multiple regression and ML models.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/Decision-Tree-Implementation" target="_blank" class="phase-card phase-top" style="left: 2525px; bottom: 390px;">
+                            <div class="phase-no">PHASE 09</div>
+                            <h3>Decision Tree Implementation</h3>
+                            <p>Built first models for prediction and classification.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/Support-Vector-Machines-Implementation" target="_blank" class="phase-card phase-bottom" style="left: 2825px; top: 390px;">
+                            <div class="phase-no">PHASE 10</div>
+                            <h3>Support Vector Machines Implementation</h3>
+                            <p>Used advanced algorithms and tuning techniques.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/Car-Resale-Price-Predictor-RandomForest" target="_blank" class="phase-card phase-top" style="left: 3125px; bottom: 390px;">
+                            <div class="phase-no">PHASE 11</div>
+                            <h3>Building Real-World Models using Random Forest</h3>
+                            <p>Worked on large datasets to create accurate predictions.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/Holiday-Package-Prediction-Randomforest" target="_blank" class="phase-card phase-bottom" style="left: 3425px; top: 390px;">
+                            <div class="phase-no">PHASE 12</div>
+                            <h3>Solving Business Problems using Random Forest</h3>
+                            <p>Used ML to optimize real-world decision-making.</p>
+                        </a>
+                        <a href="https://github.com/AnmolPatel20/NextFlix_Recommendation_System" target="_blank" class="phase-card phase-top" style="left: 3725px; bottom: 390px;">
+                            <div class="phase-no">PHASE 13</div>
+                            <h3>NextFlix Recommendation System</h3>
+                            <p>Built recommendation systems using data patterns.</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
     </section>
 
 
@@ -845,8 +1015,6 @@
             <h2 class="section-title">Contact Me</h2>
             <div class="contact-wrapper">
                 <div class="contact-info">
-                    <p class="contact-subtitle">I’m Open to Internships, Full-Time Roles, Freelance Projects, and
-                        Collaborations. Feel Free to Reach Out.</p>
 
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
