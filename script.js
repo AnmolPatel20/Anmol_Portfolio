@@ -174,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
     updateActiveNav(); // Run once on load
 });
 
-// Simplified function to create fewer animated particles in the background
+// Simplified function to create animated particles in the background
 function createSimplifiedParticles() {
     const hero = document.querySelector('.hero');
 
@@ -184,8 +184,8 @@ function createSimplifiedParticles() {
     particlesContainer.classList.add('particles-container');
     hero.appendChild(particlesContainer);
 
-    // Reduced number of particles
-    for (let i = 0; i < 15; i++) {
+    // Increased number of particles for more sparkle
+    for (let i = 0; i < 250; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
@@ -193,14 +193,14 @@ function createSimplifiedParticles() {
         const posX = Math.random() * 100;
         const posY = Math.random() * 100;
 
-        // Random size
-        const size = Math.random() * 3 + 1;
+        // Random size - slightly larger
+        const size = Math.random() * 4 + 1.5;
 
-        // Random animation duration - slower
-        const duration = Math.random() * 15 + 15;
+        // Random animation duration - slightly faster
+        const duration = Math.random() * 10 + 10;
 
-        // Lower opacity
-        const opacity = Math.random() * 0.3 + 0.1;
+        // Higher opacity for more visibility
+        const opacity = Math.random() * 0.5 + 0.2;
 
         // Set styles
         particle.style.left = `${posX}%`;
