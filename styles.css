@@ -220,22 +220,22 @@ nav {
 }
 
 /* When checked (light mode) */
-.theme-switch input:checked + .slider {
+.theme-switch input:checked+.slider {
     background: rgba(37, 99, 235, 0.12);
     border-color: rgba(37, 99, 235, 0.3);
 }
 
-.theme-switch input:checked + .slider::before {
+.theme-switch input:checked+.slider::before {
     transform: translateY(-50%) translateX(27px);
     background: #2563eb;
     box-shadow: 0 0 8px rgba(37, 99, 235, 0.4);
 }
 
-.theme-switch input:checked + .slider .icon-dark {
+.theme-switch input:checked+.slider .icon-dark {
     opacity: 0.4;
 }
 
-.theme-switch input:checked + .slider .icon-light {
+.theme-switch input:checked+.slider .icon-light {
     opacity: 1;
     color: #f59e0b;
 }
@@ -328,11 +328,16 @@ nav {
 
 /* ===== Light Mode ===== */
 body.light-mode {
-    --bg-color: #E6F2FF; /* Light blue */
-    --bg-secondary: #F0F8FF; /* Lighter blue */
-    --text-color: #0A192F; /* Dark blue */
-    --light-text: #1E3A5F; /* Medium dark blue */
-    --accent-color: #0055A4; /* Dark blue accent */
+    --bg-color: #E6F2FF;
+    /* Light blue */
+    --bg-secondary: #F0F8FF;
+    /* Lighter blue */
+    --text-color: #0A192F;
+    /* Dark blue */
+    --light-text: #1E3A5F;
+    /* Medium dark blue */
+    --accent-color: #0055A4;
+    /* Dark blue accent */
     --shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
 }
 
@@ -418,13 +423,12 @@ body.light-mode .timeline-content {
     border: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-body.light-mode .skill-info h3,
-body.light-mode .skill-tech span {
-    color: #ffffff;
+body.light-mode .skill-card {
+    background: rgba(200, 220, 245, 0.85);
 }
 
 body.light-mode .skill-tech span {
-    background-color: rgba(200, 200, 200, 0.4);
+    background-color: rgba(0, 85, 164, 0.1);
 }
 
 /* About section light */
@@ -544,10 +548,10 @@ body.light-mode .form-group textarea:focus {
     border-color: var(--accent-color);
 }
 
-body.light-mode .form-group input:focus ~ label,
-body.light-mode .form-group input:not(:placeholder-shown) ~ label,
-body.light-mode .form-group textarea:focus ~ label,
-body.light-mode .form-group textarea:not(:placeholder-shown) ~ label {
+body.light-mode .form-group input:focus~label,
+body.light-mode .form-group input:not(:placeholder-shown)~label,
+body.light-mode .form-group textarea:focus~label,
+body.light-mode .form-group textarea:not(:placeholder-shown)~label {
     background-color: var(--bg-color);
 }
 
@@ -579,14 +583,44 @@ body.light-mode footer {
     background-color: var(--bg-color);
 }
 
-/* Scrollbar light */
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb {
+    background: #5ba3d9;
+    border-radius: 10px;
+    border: 2px solid var(--bg-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #3d8cc4;
+}
+
+/* Scrollbar light mode */
 body.light-mode::-webkit-scrollbar-track {
     background: var(--bg-color);
 }
 
-/* Particle opacity in light mode */
+body.light-mode::-webkit-scrollbar-thumb {
+    background: #7bb8e3;
+    border-color: var(--bg-color);
+}
+
+body.light-mode::-webkit-scrollbar-thumb:hover {
+    background: #5ba3d9;
+}
+
+/* Particle opacity and color in light mode for better visibility */
 body.light-mode .particle {
-    opacity: 0.08 !important;
+    opacity: 0.4 !important;
+    background-color: #0055A4;
+    /* Ensure it uses the dark blue accent color */
 }
 
 /* Hero Section */
@@ -638,30 +672,33 @@ body.light-mode .particle {
 
 .scrolling-strip {
     position: absolute;
-    bottom: 48px; /* Sits exactly above the bottom nav */
+    bottom: 48px;
     left: 0;
     width: 100%;
-    background: rgba(18, 18, 18, 0.4); /* subtle dark glass effect */
-    border-top: 1px solid rgba(0, 217, 255, 0.2);
-    border-bottom: 1px solid rgba(0, 217, 255, 0.2);
+    background: rgba(18, 18, 18, 0.85);
+    border-top: 2px solid var(--accent-color);
+    border-bottom: 2px solid var(--accent-color);
     backdrop-filter: blur(5px);
     -webkit-backdrop-filter: blur(5px);
     color: var(--text-color);
     padding: 12px 0;
-    z-index: 0; /* behind the hero-content */
+    z-index: 0;
     overflow: hidden;
     white-space: nowrap;
     display: flex;
 }
 
 body.light-mode .scrolling-strip {
-    background: rgba(255, 255, 255, 0.5);
-    border-color: rgba(37, 99, 235, 0.2);
+    background: rgba(255, 255, 255, 0.85);
+    border-top-color: #0055A4;
+    border-bottom-color: #0055A4;
+    color: #0055A4;
 }
 
 @media (max-width: 768px) {
     .scrolling-strip {
-        bottom: 10px; /* Lowers it on mobile to sit perfectly flush/behind the bottom bar */
+        bottom: 80px;
+        /* Slightly above the bottom nav */
     }
 }
 
@@ -680,9 +717,18 @@ body.light-mode .scrolling-strip {
     color: var(--accent-color);
 }
 
+body.light-mode .scrolling-content i {
+    color: #0055A4;
+}
+
 @keyframes scrollStrip {
-    0% { transform: translateX(0); }
-    100% { transform: translateX(-50%); }
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
 }
 
 .hero-content {
@@ -712,6 +758,31 @@ body.light-mode .scrolling-strip {
     flex: 0 0 auto;
     position: relative;
     background: transparent;
+    z-index: 1;
+}
+
+.profile-image::before {
+    content: '';
+    position: absolute;
+    top: 35%;
+    /* Moved up to cover the head */
+    left: 57%;
+    /* Shifted slightly to the right */
+    transform: translate(-50%, -50%) rotate(15deg);
+    /* Slight tilt for the shape */
+    width: 280px;
+    height: 280px;
+    background: var(--accent-color);
+    border-radius: 50%;
+    opacity: 0.25;
+    box-shadow:
+        150px 0 0 0 var(--accent-color),
+        0 150px 0 0 var(--accent-color),
+        150px 150px 0 0 var(--accent-color);
+    z-index: -1;
+    margin-top: -75px;
+    margin-left: -75px;
+    transition: all 0.3s ease;
 }
 
 .profile-image img {
@@ -719,9 +790,15 @@ body.light-mode .scrolling-strip {
     height: auto;
     object-fit: contain;
     background: transparent;
+    position: relative;
+    z-index: 2;
 }
 
 /* Default (Dark Mode) */
+.profile-image .img-dark {
+    display: block;
+}
+
 .profile-image .img-light {
     display: none;
 }
@@ -734,6 +811,7 @@ body.light-mode .profile-image .img-dark {
 body.light-mode .profile-image .img-light {
     display: block;
 }
+
 .hero-content h1 {
     font-size: clamp(2.4rem, 6vw, 3.6rem);
     margin-bottom: 10px;
@@ -944,42 +1022,63 @@ body.light-mode .profile-image .img-light {
     display: flex;
     flex-direction: column;
     align-items: center;
+    gap: 50px;
     position: relative;
     z-index: 1;
+    width: 100%;
 }
 
 .about-text {
     max-width: 1100px;
-    text-align: center;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     margin: 0 auto;
 }
 
 .about-text p {
     margin-bottom: 20px;
     font-size: 1.1rem;
-    transition: var(--transition);
+    line-height: 1.85;
+    color: var(--light-text);
     text-align: justify;
 }
 
-.skills {
-    margin-top: 40px;
-    width: 100%;
-    display: grid;
-    gap: 16px;
-    align-items: stretch;
-    /* ensure children stretch to equal heights */
-    grid-auto-rows: 1fr;
-    /* equalize heights within each row */
-    grid-template-columns: 1fr;
-    /* default: single column on mobile */
-    justify-content: center;
-    /* center grid within container */
+@media (min-width: 992px) {
+    .about-text p {
+        text-align: justify;
+        font-size: 1.2rem;
+        line-height: 1.9;
+    }
 }
 
-.skills h3 {
-    font-size: 1.5rem;
-    margin-bottom: 20px;
-    text-align: center;
+.skills {
+    width: 100%;
+    display: grid;
+    gap: 20px;
+    align-items: stretch;
+    grid-auto-rows: 1fr;
+    grid-template-columns: 1fr;
+}
+
+@media (min-width: 600px) {
+    .skills {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .skills {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+.skill-info h3 {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    text-align: left;
+    color: #0055A4;
 }
 
 .skills-list {
@@ -992,7 +1091,9 @@ body.light-mode .profile-image .img-light {
 
 /* Skill cards styled like project cards */
 .skill-card {
-    background-color: var(--bg-secondary);
+    background: rgba(40, 42, 54, 0.9);
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
     border-radius: var(--border-radius);
     overflow: hidden;
     box-shadow: var(--shadow);
@@ -1000,21 +1101,7 @@ body.light-mode .profile-image .img-light {
     position: relative;
     min-height: 200px;
     display: flex;
-}
-
-.skill-card.bg-cover {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-image: var(--card-bg, none);
-}
-
-.skill-card.bg-cover::after {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65));
-    z-index: 0;
+    border: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .skill-card::before {
@@ -1024,7 +1111,7 @@ body.light-mode .profile-image .img-light {
     left: 0;
     width: 100%;
     height: 5px;
-    background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+    background: #0055A4;
 }
 
 .skill-card:hover {
@@ -1085,7 +1172,10 @@ body.light-mode .profile-image .img-light {
 .journey::before {
     content: '';
     position: absolute;
-    top: 0; left: 0; width: 100%; height: 100px;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
     background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-color));
 }
 
@@ -1115,10 +1205,13 @@ body.light-mode .profile-image .img-light {
     width: 100%;
     overflow-x: auto;
     padding: 120px 0 120px;
-    scrollbar-width: none; /* Firefox */
+    scrollbar-width: none;
+    /* Firefox */
 }
+
 .roadmap-wrapper::-webkit-scrollbar {
-    display: none; /* Chrome, Safari */
+    display: none;
+    /* Chrome, Safari */
 }
 
 .roadmap-track {
@@ -1137,10 +1230,11 @@ body.light-mode .profile-image .img-light {
 
 /* Cards styling */
 .phase-card {
-    --card-accent: var(--accent-color); /* Light blue in dark mode */
+    --card-accent: var(--accent-color);
+    /* Light blue in dark mode */
     --card-shadow: rgba(0, 217, 255, 0.15);
     --overlay-bg: rgba(0, 0, 0, 0.85);
-    
+
     position: absolute;
     background: var(--bg-secondary);
     border-radius: 16px;
@@ -1159,13 +1253,15 @@ body.light-mode .profile-image .img-light {
 }
 
 body.light-mode .phase-card {
-    --card-accent: #0A192F; /* Dark blue in light mode */
+    --card-accent: #0A192F;
+    /* Dark blue in light mode */
     --card-shadow: rgba(10, 25, 47, 0.15);
     --overlay-bg: rgba(255, 255, 255, 0.9);
 }
 
 .evolving-text {
-    fill: #ffffff; /* White text for dark mode */
+    fill: #ffffff;
+    /* White text for dark mode */
 }
 
 body.light-mode .evolving-text {
@@ -1751,6 +1847,19 @@ footer {
         max-width: 290px;
         height: auto;
         margin: 0 auto;
+    }
+
+    .profile-image::before {
+        top: 35%;
+        /* Moved up for mobile as well */
+        width: 200px;
+        height: 200px;
+        box-shadow:
+            110px 0 0 0 var(--accent-color),
+            0 110px 0 0 var(--accent-color),
+            110px 110px 0 0 var(--accent-color);
+        margin-top: -55px;
+        margin-left: -55px;
     }
 
     .hero-content h1 {
@@ -2781,7 +2890,7 @@ li {
 .cert-lightbox {
     display: none;
     position: fixed;
-    z-index: 2000;
+    z-index: 999;
     left: 0;
     top: 0;
     width: 100%;
@@ -2789,15 +2898,35 @@ li {
     overflow-y: auto;
     background-color: rgba(18, 18, 18, 0.95);
     backdrop-filter: blur(10px);
+    padding-top: 50px;
+    padding-bottom: 60px;
+}
+
+.cert-lightbox::-webkit-scrollbar {
+    width: 10px;
+}
+
+.cert-lightbox::-webkit-scrollbar-track {
+    background: rgba(18, 18, 18, 0.5);
+}
+
+.cert-lightbox::-webkit-scrollbar-thumb {
+    background: #5ba3d9;
+    border-radius: 10px;
+    border: 2px solid rgba(18, 18, 18, 0.5);
+}
+
+.cert-lightbox::-webkit-scrollbar-thumb:hover {
+    background: #3d8cc4;
 }
 
 .cert-lightbox-content {
     background-color: var(--bg-color);
-    margin: 5% auto;
+    margin: 3% auto;
     padding: 40px;
     border: 1px solid var(--accent-color);
-    width: 90%;
-    max-width: 1200px;
+    width: 95%;
+    max-width: 1500px;
     border-radius: var(--border-radius);
     position: relative;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5), 0 0 18px rgba(0, 217, 255, 0.07);
@@ -2809,6 +2938,7 @@ li {
         opacity: 0;
         transform: scale(0.9);
     }
+
     to {
         opacity: 1;
         transform: scale(1);
@@ -2831,4 +2961,3 @@ li {
     color: var(--accent-color);
     text-decoration: none;
 }
-
