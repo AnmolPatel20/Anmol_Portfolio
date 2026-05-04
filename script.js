@@ -184,8 +184,8 @@ function createSimplifiedParticles() {
     particlesContainer.classList.add('particles-container');
     hero.appendChild(particlesContainer);
 
-    // Increased number of particles for more sparkle
-    for (let i = 0; i < 250; i++) {
+    // Reduced number of particles for a cleaner look
+    for (let i = 0; i < 80; i++) {
         const particle = document.createElement('div');
         particle.classList.add('particle');
 
