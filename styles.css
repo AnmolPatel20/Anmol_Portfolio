@@ -3305,8 +3305,8 @@ li {
 
     .experience-actions {
         display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 8px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 6px;
         width: 100%;
         align-items: stretch;
     }
@@ -3318,8 +3318,8 @@ li {
         align-items: center;
         justify-content: center;
         text-align: center;
-        padding: 10px 6px;
-        font-size: 0.76rem;
+        padding: 8px 4px;
+        font-size: 0.72rem;
         box-sizing: border-box;
     }
 
