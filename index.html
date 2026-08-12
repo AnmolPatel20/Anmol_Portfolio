@@ -10,13 +10,13 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
-<body>
+<body class="light-mode">
     <header>
         <div class="container">
             <nav>
                 <h1 class="logo">Anmol's Portfolio</h1>
                 <label class="theme-switch" for="theme-toggle" aria-label="Toggle light/dark mode">
-                    <input type="checkbox" id="theme-toggle">
+                    <input type="checkbox" id="theme-toggle" checked>
                     <span class="slider">
                         <i class="fas fa-moon slider-icon icon-dark"></i>
                         <i class="fas fa-sun slider-icon icon-light"></i>
@@ -365,10 +365,10 @@
                             <div class="timeline-header">
                                 <div class="timeline-title-group">
                                     <h3>AI Intern</h3>
-                                    <p class="company">IBM SkillsBuild – Edunet Foundation</p>
+                                    <p class="company"><i class="fas fa-briefcase"></i> IBM SkillsBuild – Edunet Foundation</p>
                                 </div>
+                                <span class="period-badge"><i class="far fa-calendar-alt"></i> May 2026 – June 2026</span>
                             </div>
-                            <p class="period">May 2026 – Present</p>
                             <p class="description">
                                 Working as an AI Intern under the IBM SkillsBuild Program by Edunet Foundation, focusing on Artificial Intelligence, Machine Learning, and Deep Learning using Python.
                             </p>
@@ -376,27 +376,28 @@
                                 <a href="images/IBM_SkillsBuild_Offer_Letter.pdf" target="_blank" class="experience-btn">
                                     <i class="fas fa-file-alt"></i> Offer Letter
                                 </a>
+                                <a href="images/completioncertificateibm.pdf" target="_blank" class="experience-btn">
+                                    <i class="fas fa-certificate"></i> Certificate
+                                </a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Example Experience Item 1 -->
+                    <!-- Maincrafts Technology Experience -->
                     <div class="timeline-item">
                         <div class="timeline-dot"></div>
                         <div class="timeline-content bg-cover" style="--card-bg: url('images/MaincraftBG.png');">
                             <div class="timeline-header">
                                 <div class="timeline-title-group">
                                     <h3>Data Science Intern</h3>
-                                    <p class="company">Maincrafts Technology</p>
+                                    <p class="company"><i class="fas fa-briefcase"></i> Maincrafts Technology</p>
                                 </div>
-
+                                <span class="period-badge"><i class="far fa-calendar-alt"></i> January 2026 – March 2026</span>
                             </div>
-                            <p class="period">January 2026 – March 2026</p>
                             <p class="description">
                                 Working as a Data Science & Data Analytics Intern using Python,
                                 focusing on data cleaning, analysis, visualization, and
                                 extracting meaningful insights from real-world datasets.
-
                             </p>
                             <div class="experience-actions">
                                 <a href="images/Maincrafts Offer Letter.pdf" target="_blank" class="experience-btn">
@@ -404,15 +405,12 @@
                                 </a>
 
                                 <a href="images/Maincrafts Certificate of Internship.pdf" target="_blank" class="experience-btn">
-                                    <div class="experience-btn-text">
-                                        <i class="fas fa-certificate"></i> Certificate
-                                    </div>
+                                    <i class="fas fa-certificate"></i> Certificate
                                 </a>
 
                                 <a href="images/Letter of Recommendation- Maincrafts.pdf" target="_blank" class="experience-btn">
                                     <i class="fas fa-user-check"></i> LOR
                                 </a>
-                                
                             </div>
                         </div>
                     </div>
@@ -587,9 +585,13 @@
                 </div>
                 
                 <div class="projects-3d-info" id="projects-3d-info">
-                    <p id="projects-3d-desc" class="desc"></p>
-                    <div id="projects-3d-tech" class="project-tech" style="justify-content: center; margin-bottom: 20px;"></div>
-                    <div id="projects-3d-links" class="project-links" style="justify-content: center;"></div>
+                    <div class="project-summary-box">
+                        <div class="summary-box-content">
+                            <p id="projects-3d-desc" class="desc"></p>
+                            <div id="projects-3d-tech" class="project-tech"></div>
+                        </div>
+                        <div id="projects-3d-links" class="project-links project-links-vertical"></div>
+                    </div>
                 </div>
                 
                 <div class="projects-3d-dots" id="projects-3d-dots"></div>
@@ -773,10 +775,18 @@
                 </div>
                 
                 <div class="inline-3d-info" id="inline-3d-info">
-                    <h3 id="inline-3d-title"></h3>
-                    <p id="inline-3d-issuer" class="issuer"></p>
-                    <p id="inline-3d-date" class="date"></p>
-                    <p id="inline-3d-credential" class="credential"></p>
+                    <div class="cert-summary-box">
+                        <div class="cert-box-left">
+                            <h3 id="inline-3d-title"></h3>
+                            <div class="cert-meta-row">
+                                <p id="inline-3d-issuer" class="issuer"></p>
+                                <p id="inline-3d-date" class="date"></p>
+                            </div>
+                        </div>
+                        <div class="cert-box-right">
+                            <p id="inline-3d-credential" class="credential"></p>
+                        </div>
+                    </div>
                 </div>
                 
                 <div class="inline-3d-dots" id="inline-3d-dots"></div>

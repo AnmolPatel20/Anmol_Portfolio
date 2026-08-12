@@ -5,8 +5,11 @@ document.addEventListener('DOMContentLoaded', function () {
     const themeToggle = document.getElementById('theme-toggle');
     const savedTheme = localStorage.getItem('theme');
 
-    // Apply saved theme on load
-    if (savedTheme === 'light') {
+    // Apply saved theme on load (default to Light Mode)
+    if (savedTheme === 'dark') {
+        document.body.classList.remove('light-mode');
+        if (themeToggle) themeToggle.checked = false;
+    } else {
         document.body.classList.add('light-mode');
         if (themeToggle) themeToggle.checked = true;
     }
@@ -530,6 +533,7 @@ function renderInline3DCarousel() {
         const issuerEl = document.getElementById('inline-3d-issuer');
         const dateEl = document.getElementById('inline-3d-date');
         const credEl = document.getElementById('inline-3d-credential');
+        const urlEl = document.getElementById('inline-3d-url');
         
         if (titleEl) titleEl.textContent = activeData.title;
         if (issuerEl) issuerEl.textContent = activeData.issuer;
@@ -541,6 +545,14 @@ function renderInline3DCarousel() {
             } else {
                 credEl.textContent = '';
                 credEl.style.display = 'none';
+            }
+        }
+        if (urlEl) {
+            if (activeData.url && activeData.url !== '#') {
+                urlEl.href = activeData.url;
+                urlEl.style.display = 'inline-flex';
+            } else {
+                urlEl.style.display = 'none';
             }
         }
     }
