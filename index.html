@@ -6,12 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ANMOL PATEL</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Montserrat:wght@800;900&family=Outfit:wght@800;900&family=Plus+Jakarta+Sans:wght@500;600;700&family=Poppins:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&family=Syne:wght@700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body class="light-mode">
-    <header>
+    <header id="main-header">
         <div class="container">
             <nav>
                 <h1 class="logo">Anmol's Portfolio</h1>
@@ -24,6 +27,21 @@
                 </label>
             </nav>
         </div>
+        <!-- Curved bottom line & glass scoop -->
+        <svg class="mobile-nav-curve-svg" viewBox="0 0 1000 60" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+                <!-- Mobile clip: curves up at 0.775 so it never overlaps the toggle -->
+                <clipPath id="mobile-nav-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M 0,0 L 0.775,0 C 0.735,0 0.705,1 0.645,1 L 0,1 Z" />
+                </clipPath>
+                <!-- Desktop clip: curves up at 0.89 for wider screens -->
+                <clipPath id="desktop-nav-clip" clipPathUnits="objectBoundingBox">
+                    <path d="M 0,0 L 0.89,0 C 0.86,0 0.83,1 0.78,1 L 0,1 Z" />
+                </clipPath>
+            </defs>
+            <path class="nav-curve-line mobile-curve" vector-effect="non-scaling-stroke" d="M 0,59 L 645,59 C 705,59 735,1 775,1" />
+            <path class="nav-curve-line desktop-curve" vector-effect="non-scaling-stroke" d="M 0,59 L 780,59 C 830,59 860,1 890,1" />
+        </svg>
     </header>
 
     <!-- Bottom Navigation Bar -->
@@ -66,30 +84,13 @@
     </nav>
 
     <section id="home" class="hero">
-        <div class="scrolling-strip">
-            <div class="scrolling-content">
-                <span>PYTHON</span> <i class="fas fa-asterisk"></i>
-                <span>DATA SCIENCE</span> <i class="fas fa-asterisk"></i>
-                <span>DATA ANALYTICS</span> <i class="fas fa-asterisk"></i>
-                <span>DATA VISUALIZATION</span> <i class="fas fa-asterisk"></i>
-                <span>MACHINE LEARNING</span> <i class="fas fa-asterisk"></i>
-                <span>DEEP LEARNING</span> <i class="fas fa-asterisk"></i>
-                <!-- duplicate for seamless loop -->
-                <span>PYTHON</span> <i class="fas fa-asterisk"></i>
-                <span>DATA SCIENCE</span> <i class="fas fa-asterisk"></i>
-                <span>DATA ANALYTICS</span> <i class="fas fa-asterisk"></i>
-                <span>DATA VISUALIZATION</span> <i class="fas fa-asterisk"></i>
-                <span>MACHINE LEARNING</span> <i class="fas fa-asterisk"></i>
-                <span>DEEP LEARNING</span> <i class="fas fa-asterisk"></i>
-            </div>
-        </div>
         <div class="container">
             <div class="hero-content">
                 <div class="hero-text">
                     <h1>Hello! I’m <span class="highlight" id="typing-text"></span><span class="typing-cursor"></span>
                     </h1>
                     <h2>Data Science & Machine Learning</h2>
-                    <p>I build data-driven solutions using Python, Machine Learning, and Data Visualization.</p>
+                    <p>I build data-driven solutions using Python,<br class="hero-desc-br"> Machine&nbsp;Learning, and Data&nbsp;Visualization.</p>
                     <div class="social-links">
                         <a href="https://github.com/AnmolPatel20" target="_blank" aria-label="GitHub"><i
                                 class="fab fa-github"></i></a>
@@ -423,7 +424,21 @@
         <div class="container">
             <h2 class="section-title">Achievements</h2>
             <div class="achievements-grid">
-                
+
+                <div class="achievement-card bg-cover" style="--card-bg: url('images/GenAILogo.png');"
+                    onclick="window.open('images/DSTour.png', '_blank')">
+                    <div class="achievement-overlay">
+                        <i class="fas fa-external-link-alt"></i>
+                        <p>Click to Verify</p>
+                    </div>
+                    <div class="achievement-info">
+                        <h3>Data Science Tour – Hyderabad 2026</h3>
+                        <p class="issuer">Selected for the Data Science Tour with a Full Scholarship, gaining practical industry exposure and insights into Data Science and AI.</p>
+                        <p class="date">September 2026</p>
+                        <p class="credential">Parul University × Gyansthan Education Services</p>
+                    </div>
+                </div>
+
                 <div class="achievement-card bg-cover" style="--card-bg: url('images/GenAILogo.png');"
                     onclick="window.open('images/OdooXParul.png', '_blank')">
                     <div class="achievement-overlay">
@@ -453,7 +468,7 @@
                     </div>
                 </div>
 
-                <div class="achievement-card bg-cover" style="--card-bg: url('images/devopslogo.png');"
+                <div class="achievement-card bg-cover" style="--card-bg: url('images/GenAILogo.png');"
                     onclick="window.open('images/DevopsAI.jpg', '_blank')">
                     <div class="achievement-overlay">
                         <i class="fas fa-external-link-alt"></i>
@@ -468,7 +483,7 @@
                     </div>
                 </div>
 
-                <div class="achievement-card bg-cover" style="--card-bg: url('images/hacathonlogo.png');"
+                <div class="achievement-card bg-cover" style="--card-bg: url('images/GenAILogo.png');"
                     onclick="window.open('images/vadodarahacathonparticipation.jpg', '_blank')">
 
                     <div class="achievement-overlay">
@@ -822,11 +837,11 @@
 
                     <div class="contact-item">
                         <i class="fas fa-envelope"></i>
-                        <p>inquiry.anmol20@gmail.com</p>
+                        <a href="mailto:inquiry.anmol20@gmail.com" class="contact-link">inquiry.anmol20@gmail.com</a>
                     </div>
                     <div class="contact-item">
                         <i class="fas fa-map-marker-alt"></i>
-                        <p>Vadodara[390025], Gujarat, India</p>
+                        <span class="contact-text">Vadodara[390025], Gujarat, India</span>
                     </div>
 
                     <div class="contact-social-links">
@@ -862,7 +877,7 @@
                             <label>Subject</label>
                         </div>
                         <div class="form-group">
-                            <textarea name="message" rows="5" placeholder=" " required></textarea>
+                            <textarea name="message" rows="4" placeholder=" " required></textarea>
                             <label>Your Message</label>
                         </div>
                         <button type="submit" class="btn btn-submit">
@@ -876,7 +891,7 @@
 
     <footer>
         <div class="container">
-            <p>&copy; 2024 Your Portfolio. All Rights Reserved.</p>
+            <p>&copy; 2024 Anmol's Portfolio. All Rights Reserved.</p>
         </div>
     </footer>
 
